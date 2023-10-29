@@ -2,8 +2,8 @@ package com.carlosmillan.springboot.di.app.models.service;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class MiServicio {
+@Component("MiServicioSimple")
+public class MiServicio implements IServicio{
     public String operacion() {
         return "ejecutando algun proceso importante!!...";
     }
