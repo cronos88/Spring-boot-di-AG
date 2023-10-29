@@ -9,12 +9,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-    @Autowired // Principio Hollywood
+    @Autowired
     private IServicio servicio;
+
+    /*@Autowired
+    public IndexController(IServicio servicio) { //Constructor
+        this.servicio = servicio;
+    }*/
 
     @GetMapping({"/", "", "/index"})
     public String index(Model model) {
         model.addAttribute("objeto", servicio.operacion());
         return "index";
     }
+
+    /*@Autowired // Principio Hollywood
+    public void setServicio(IServicio servicio) {
+        this.servicio = servicio;
+    }*/
 }
